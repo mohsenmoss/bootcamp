@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-start align-items-between">
+    <div class="d-flex justify-content-evenly flex-wrap">
+    <div *ngFor="let card of cards; let i = index" [style.display]="cardDisplay(i)" class="card" style="width: 18rem;" >
+      <img class="card-img-top" [src]="card.Image" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{card.title}}</h5>
+        <p class="card-text">{{card.Text}}</p>
+        <a [href]="card.link" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    </div>
+    <button class="btn btn-primary ms-3" (click)="plusIndex()">+</button>
+    </div>
+
+    <br>
+    <hr>
+////////////////////////////////////////////////////////////////////////////////////////
+    <div class="container">
+        <input class="form-control" [(ngModel)]="nameOfList">
+        <button class="btn btn-info mt-2" (click)="addInfo()">submit</button>
+      </div>
+      <br>
+      <br>
+      <br>
+      
+      <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+          <th>FirstName and LastName</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let data of table">
+          <tr>
+          <td>{{data}}</td>
+          <button class="btn btn-info" (click)="DeleteData()">Delete</button>
+        </tr>
+        </tbody>
+      </table>
+      </div>
